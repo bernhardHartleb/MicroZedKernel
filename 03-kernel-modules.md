@@ -1,4 +1,4 @@
-##How to compile and run a hello world kernel module in the MicroZedBoard
+##3. How to compile and run a hello world kernel module in the MicroZedBoard
 
 ###Prerequisites
 
@@ -22,21 +22,17 @@ Check that gcc is found and the architecture is ARM:
 ~$ ${CC}gcc --version
 ```
 
-Connect the board
------------------
+###Comiple the module
 
-Connect the MicroZed over SSH:
+Be sure that you adapt the Makefile with:
 ```sh
-~$ ssh root@192.168.1.103 
-~$ cd src/hello_world
+    TARGET = 192.168.1.103                    ->  The ip address of the board
+	TARGET_DIR = /root                          ->  where the driver will be copied
+	KERNELDIR ?= ~/linux-xlnx                 ->  path to the linux kernel sources
 ```
 
-Be sure that you addapt the Makefile with:
+And then build the module
 ```sh
-    TARGET = 192.168.1.103                      ->  The ip address of the board
-	TARGET_DIR = /root                          ->  where the driver will be copied
-	KERNELDIR ?= ~/src/zynq/kernel/linux-xlnx   ->  path to the linux kernel sources
-
 ~$ make 
 
 A hello.ko file should be produced:
@@ -48,18 +44,23 @@ Install the module:
 ~$ make install
 ```
 
-Connect to the board through SSH
+###Connect to the board through SSH
 
-~$ ssh root@ip
+```sh
+~$ ssh root@192.168.1.103 
+```
 
 Go to /root and check that the *.ko is there
 
+```sh
 root@arm:~# cd /root
 root@arm:~# ls
 hello.ko
+```
 
 Insert the module and check that the hello world is loaded:
 
+```sh
 root@arm:~# insmod hello.ko
 root@arm:~# lsmod
 
@@ -71,5 +72,4 @@ To unload the module:
 
 root@arm:~# rmmod hello
 root@arm:~# dmesg
-
-
+```

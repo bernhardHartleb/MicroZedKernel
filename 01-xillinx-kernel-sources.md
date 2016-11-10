@@ -1,4 +1,4 @@
-##Get the Linux kernel sources for the MicroZedboard
+##1. Get the Linux kernel sources for the MicroZedboard
 
 - Brief git tutorial
 	http://www.wiki.xilinx.com/Using+Git

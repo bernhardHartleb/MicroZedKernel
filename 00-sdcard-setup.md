@@ -29,9 +29,9 @@ With the command lsblk you can check to which device file is the SD card (/dev/s
 ###Boot the Debian image
 
 Set the jumpers to boot from the SD card:
-    JMP1 = "1"
-    JMP2 = "0"
-    JMP3 = "0"
+- JMP1 = "1"
+- JMP2 = "0"
+- JMP3 = "0"
 
 Insert SD Card into MicroZed. Connect MicroZed to the host with USB Serial port cable and RJ45 cable.
 Reboot MicroZed board by removing the power.
@@ -76,9 +76,8 @@ microZed$ ${CC}gcc --version
 mircoZed$ ${CC}gcc hello-world.c -o hello-world.elf
 ```
 
-###Copying files to your board
+###Copy files to your board
 
-copy the elf file in your board:
 ```sh
 ~$ scp hello-world.elf root@192.168.1.103:/root
 ~$ ssh root@192.168.1.103

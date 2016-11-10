@@ -1,4 +1,4 @@
-##How to compile and install the Xilinx kernel in the MicroZedboard
+##2. How to compile and install the Xilinx kernel in the MicroZedboard
 
 ###Prerequisites
 
@@ -23,8 +23,9 @@ Check that gcc is found and the architecture is ARM:
 ```
 
 We are now ready to compile the kernel.
-The kernel developers provide a Makefile.
-We run all required commands via "make".
+
+The kernel developers provide a Makefiles.
+We can run all required tasks via "make".
 
 ###Configuring Linux
 
@@ -46,13 +47,15 @@ Adapt the core count of your processor in this case 2.
 ~/linux-xlnx$ make menuconfig
 ~/linux-xlnx$ make uImage -j2
 ~/linux-xlnx$ make modules -j2
-~/linux-xlnx$ make modules_install INSTALL_MOD_PATH=./modules 
+~/linux-xlnx$ make modules_install INSTALL_MOD_PATH=./my_modules 
 ```
 
 To clean and remove the build files:
 
 ```sh
 ~/linux-xlnx$ make clean
+or to clean everything (including config)
+~/linux-xlnx$ make mrproper
 ```
 
 ###Device tree
@@ -64,21 +67,44 @@ To clean and remove the build files:
 ```
 
 Change the line "chosen" parameters as next:
+There is also a minor mistake in the include line we need to fix:
 
+ ```diff
+ /dts-v1/;
+-#include "zynq-7000.dtsi"
++/include/ "zynq-7000.dtsi"
+ 
+ / {
+        model = "Zynq Zed Development Board";
+@@ -31,8 +31,8 @@
+        };
+ 
+        chosen {
+-               bootargs = "";
+-               stdout-path = "serial0:115200n8";
++              bootargs = "console=ttyPS0,115200 root=/dev/mmcblk0p2 rw rootfstype=ext4 rootwait earlyprintk";
++              stdout-path = "/amba/serial@e0001000";
+        };
+ ```
+
+ The result should be:
+ 
      	chosen {
      		bootargs = "console=ttyPS0,115200 root=/dev/mmcblk0p2 rw rootfstype=ext4 rootwait earlyprintk";
      		linux,stdout-path = "/amba/serial@e0001000";
      	};
 
-
 Compile the source into a device tree binary (dtb):
 
+ ```sh
 ~$ dtc -I dts -O dtb -o devicetree.dtb arch/arm/boot/dts/zynq-zed.dts 
+ ```
 
 To add or change existing peripherals edit this file:
 
 vim arch/arm/boot/dts/zynq-7000.dtsi
 	        
+
 ##(Option 1) Installing the new kernel directly on SD-card
  
 Insert the SD card on your PC or Virtual Machine.
