@@ -1,16 +1,12 @@
-Get the Linux kernel sources for the MicroZedboard
-
-    Get the sources
-    ==============
+##Get the Linux kernel sources for the MicroZedboard
 
 - Brief git tutorial
 	http://www.wiki.xilinx.com/Using+Git
 
-- Check for the latest official release
+- Check for the latest official releases
     http://www.wiki.xilinx.com/Zynq+Releases
 	
-
-- Build the linux kernel
+- Use the latest sources from Xilinx:
 	
     1) Fetch sources: 
 
