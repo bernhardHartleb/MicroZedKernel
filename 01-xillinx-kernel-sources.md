@@ -10,10 +10,13 @@
 	
     1) Fetch sources: 
 
+	```sh
     ~$ git clone git://github.com/Xilinx/linux-xlnx.git
     ~$ cd linux-xlnx
+	
             
     2) Check out and switch to the desired branch:
 
+	```sh
     ~$ git checkout -b esp-v2016.3 xilinx-v2016.3
-
+	```

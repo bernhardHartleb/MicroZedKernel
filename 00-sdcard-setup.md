@@ -11,16 +11,20 @@ A basic Debian image with gnu toolchain, go, perf and various debugging tools in
 Download it and flash it in the SD card with the "dd" command. 
 
 Download from Moodle:
-# compressed file
-esp-debian-image-2016-11.img.tar.gz
 
-# uncompress
-tar -zxvf esp-debian-image-2016-11.img.tar.gz
+compressed file: esp-debian-image-2016-11.img.tar.gz
+
+uncompress
+```sh
+~$ tar -zxvf esp-debian-image-2016-11.img.tar.gz
+```
 
 With the command lsblk you can check to which device file is the SD card (/dev/sdX)
 
+```sh
 ~$ lsblk
-~$ sudo dd if=esp-debian-image-2016-11.img of=/dev/sdX bs=128k    -> be carefull!!
+~$ sudo dd if=esp-debian-image-2016-11.img of=/dev/sdX bs=128k    -> be careful !
+```
 
 ###Boot the Debian image
 
@@ -44,6 +48,7 @@ If you press enter you should get a login prompt.
 The debian image has a static IP address (192.168.1.103) as a first step you can just give your desktop a static a IP as well.
 You can run dhclient over the serial console if you board is conntected to network with DHCP server.
 
+```sh
 ~$ ifconfig eth0 192.168.1.101 up
 
 # test with ping
@@ -51,6 +56,7 @@ You can run dhclient over the serial console if you board is conntected to netwo
 
 # connect with ssh
 ~$ ssh root@192.168.1.103
+```
 
 User: debian
 Password: debian
@@ -76,9 +82,11 @@ We will be using the armhf (hardware floating point support) toolchain which is 
 ###Copying files to your board
 
 copy the elf file in your board:
+```sh
 ~$ scp hello-world.elf root@192.168.1.103:/root
 ~$ ssh root@192.168.1.103
 
 # now we are in the Zed
 microZedt$ cd /root
 microZed$ ./hello-world.elf
+```

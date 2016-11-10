@@ -8,24 +8,28 @@
 
 ###Setup the environment for cross compiling
 
+```sh
 export CC=arm-linux-gnueabihf- 
 export CROSS_COMPILE=${CC}
 export LOADADDR=0x10008000
 export ARCH=arm
+```
 
 Or use the script: kernel_toolchain_env.sh
 	
 Check that gcc is found and the architecture is ARM:
+```sh
 ~$ ${CC}gcc --version
-
+```
 
 Connect the board
 -----------------
 
-Connect the MicroZed over SSH, in this case the ip address is 192.168.1.103
-    ssh root@192.168.1.103 
-
+Connect the MicroZed over SSH:
+```sh
+~$ ssh root@192.168.1.103 
 ~$ cd src/hello_world
+```
 
 Be sure that you addapt the Makefile with:
     TARGET = 192.168.1.103                      ->  The ip address of the board
