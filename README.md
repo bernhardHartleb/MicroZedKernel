@@ -1,58 +1,21 @@
-MicroZedKernel
-==============
-
-Microzed board kernel compile and modules
-
-For the last version use:
-    
-    /prebuild/3.19
-    
-    This version has the following activated:
-    
-        amp:    no
-        ic2:    yes
-        uart0:  yes
-        usb:    yes. Not tested
-    
+##Working with the Linux kernel on the MicroZed
 
 Tutorials
 =========
 
-Kernel sources
---------------
+00-sdcard-setup
 
+How to setup and run Debian in the MicroZedboard
+ 
+01-xillinx-kernel-sources
+ 
 How to get the kernel sources for the Microzedboard
-  01-Get_the_kernel_sources.txt
 
+02-linux-kernel
 
-Debian
-------
+Configuring and compiling and installing the Linux kernel
 
-  How to setup and run Debian in the MicroZedboard:  
+03-kernel-modules
 
-  02-setup_SD_card.txt
-  
-Linux kernel
-------------
-  
-How to compile and install the Linux kernel in the MicroZedBoard  
-
-  03-linux-kernel.txt
-  
-Hello world module
--------------------
-
-Compile and run a Hello world module
-
-  10-Hello_world_tutorial.txt
-  
-Sources and binaries
-====================
-
-Prebuild images of the bootloader, linux kernel and the device tree
-
-  /prebuild
-  
-Sources files
-
-  /src
+Compile and loading a Hello-World module
+ 

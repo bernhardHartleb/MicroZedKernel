@@ -1,6 +1,4 @@
 Get the Linux kernel sources for the MicroZedboard
-    Adrian Remonda 2014
-
 
     Get the sources
     ==============
@@ -8,7 +6,7 @@ Get the Linux kernel sources for the MicroZedboard
 - Brief git tutorial
 	http://www.wiki.xilinx.com/Using+Git
 
-- Check for the latest release
+- Check for the latest official release
     http://www.wiki.xilinx.com/Zynq+Releases
 	
 
@@ -19,7 +17,7 @@ Get the Linux kernel sources for the MicroZedboard
     ~$ git clone git://github.com/Xilinx/linux-xlnx.git
     ~$ cd linux-xlnx
             
-    2) Check out and switch to the branch:
+    2) Check out and switch to the desired branch:
 
-    $ git checkout -b xilinx-v2014.3 xilinx-v2014.3
+    ~$ git checkout -b esp-v2016.3 xilinx-v2016.3
 

@@ -1,15 +1,24 @@
-Guide How to compile and run a hello world driver in the MicroZedBoard
-    Adrian Remonda 2014
+How to compile and run a hello world kernel module in the MicroZedBoard
 
-Prerequisites
--------------
-    Zedboard with a linux running, in this case xilinx 3.15
-    Linaro toolchain installed
-    Sources code: MicroZedKernel/src/hello_world
+##Prerequisites
+
+- Linux PC or Virtual Machine with armhf toolchain installed
+- 00-sd-card-setup: (Optional) Linux working on the microZed
+- 01-xilinx-kernel-sources: Linux kernel sources from Xilinx
+
+
+##Setup the environment for cross compiling
+
+export CC=arm-linux-gnueabihf- 
+export CROSS_COMPILE=${CC}
+export LOADADDR=0x10008000
+export ARCH=arm
+	
+Check that gcc is found and the architecture is ARM:
+~$ ${CC}gcc --version
 
 Settings for compiler:
 ---------------------
-        
         Assuming an already installed arm-linux-gnueabihf
     
 		~$ export CC=arm-linux-gnueabihf- 
@@ -28,7 +37,6 @@ Connect the board
 
 Connect the MicroZed over SSH, in this case the ip address is 192.168.1.103
     ssh root@192.168.1.103 
-
 
 ~$ cd src/hello_world
 
