@@ -32,6 +32,7 @@ Connect the MicroZed over SSH:
 ```
 
 Be sure that you addapt the Makefile with:
+```sh
     TARGET = 192.168.1.103                      ->  The ip address of the board
 	TARGET_DIR = /root                          ->  where the driver will be copied
 	KERNELDIR ?= ~/src/zynq/kernel/linux-xlnx   ->  path to the linux kernel sources
@@ -43,8 +44,9 @@ A hello.ko file should be produced:
 ~$ ls
 Makefile  Module.symvers  hello.c  hello.ko  hello.mod.c  hello.mod.o  hello.o  modules.order
 
-Install the module
+Install the module:
 ~$ make install
+```
 
 Connect to the board through SSH
 
@@ -69,6 +71,5 @@ To unload the module:
 
 root@arm:~# rmmod hello
 root@arm:~# dmesg
-
 
 

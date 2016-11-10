@@ -8,7 +8,7 @@ else
 	obj-m := hello.o
 	TARGET = 192.168.1.103
 	TARGET_DIR = /root
-	KERNELDIR ?= ~/src/zynq/kernel/linux-xlnx
+	KERNELDIR ?= ~/linux-xlnx
 	PWD := $(shell pwd)
 
 default:
@@ -21,5 +21,3 @@ install:
 	scp *.ko root@$(TARGET):$(TARGET_DIR)
 
 endif
-
-

@@ -1,4 +1,4 @@
-How to compile and install the Xilinx kernel in the MicroZedboard
+##How to compile and install the Xilinx kernel in the MicroZedboard
 
 ###Prerequisites
 

@@ -5,7 +5,7 @@ Prompt:
     ~$ means your pc
     microZed$ the MicroZed
 
-###Setup sd card
+###Setup the SD-card
 
 A basic Debian image with gnu toolchain, go, perf and various debugging tools installed.
 Download it and flash it in the SD card with the "dd" command. 
@@ -68,16 +68,13 @@ We will be using the armhf (hardware floating point support) toolchain which is 
 1)	The first step is to have a linux running in your MicroZed
 2)	The second is to crosscompile an user space program and run it in your board
 
-    microZed$ export CC=arm-linux-gnueabihf-
-
-- Test
-
-    microZed$ ${CC}gcc --version
-
-- Compile a hello world example
-
-    mircoZed$ ${CC}gcc hello-world.c -o hello-world.elf
-
+```sh
+microZed$ export CC=arm-linux-gnueabihf-
+# Test
+microZed$ ${CC}gcc --version
+# Compile a hello world example
+mircoZed$ ${CC}gcc hello-world.c -o hello-world.elf
+```
 
 ###Copying files to your board
 
