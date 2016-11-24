@@ -40,7 +40,8 @@ Configure the kernel (working based on the default config)
 ```
 
 ###Compiling the kernel
-    
+
+We build kernel image, modules separately. Modules can be installed via make.
 Adapt the core count of your processor in this case 2.
 
 ```sh
@@ -48,14 +49,6 @@ Adapt the core count of your processor in this case 2.
 ~/linux-xlnx$ make uImage -j2
 ~/linux-xlnx$ make modules -j2
 ~/linux-xlnx$ make modules_install INSTALL_MOD_PATH=./my_modules 
-```
-
-To clean and remove the build files:
-
-```sh
-~/linux-xlnx$ make clean
-or to clean everything (including config)
-~/linux-xlnx$ make mrproper
 ```
 
 ###Device tree
