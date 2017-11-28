@@ -1,9 +1,9 @@
-##3. How to compile and run a hello world kernel module in the MicroZedBoard
+##3. How to compile and run a hello world kernel module on the Zybo board
 
 ###Prerequisites
 
 - Linux PC or Virtual Machine with armhf toolchain installed
-- 00-sd-card-setup: (Optional) Linux working on the microZed
+- 00-sd-card-setup: (Optional) Linux booting from SD card
 - 01-xilinx-kernel-sources: Linux kernel sources from Xilinx
 
 ###Setup the environment for cross compiling
@@ -22,13 +22,13 @@ Check that gcc is found and the architecture is ARM:
 ~$ ${CC}gcc --version
 ```
 
-###Comiple the module
+###Compile the module
 
 Be sure that you adapt the Makefile with:
 ```sh
-    TARGET = 192.168.1.103                    ->  The ip address of the board
-	TARGET_DIR = /root                          ->  where the driver will be copied
-	KERNELDIR ?= ~/linux-xlnx                 ->  path to the linux kernel sources
+    TARGET = 192.168.1.101                    ->  The ip address of the board
+	TARGET_DIR = /root                           ->  where the driver will be copied
+	KERNELDIR ?= ~/xilinx-v2016.3          ->  path to the linux kernel sources
 ```
 
 And then build the module
@@ -47,7 +47,7 @@ Install the module:
 ###Connect to the board through SSH
 
 ```sh
-~$ ssh root@192.168.1.103 
+~$ ssh root@192.168.1.101
 ```
 
 Go to /root and check that the *.ko is there

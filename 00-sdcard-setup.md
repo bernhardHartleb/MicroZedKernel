@@ -1,9 +1,9 @@
-##SD card setup for the MicroZedBoard
+##SD card setup for the our development board
 
 Prompt:
 
     ~$ means your pc
-    microZed$ the MicroZed
+    zybo$ the target Zybo board
 
 ###Setup the SD-card
 
@@ -28,13 +28,9 @@ With the command lsblk you can check to which device file is the SD card (/dev/s
 
 ###Boot the Debian image
 
-Set the jumpers to boot from the SD card:
-- JMP1 = "1"
-- JMP2 = "0"
-- JMP3 = "0"
-
-Insert SD Card into MicroZed. Connect MicroZed to the host with USB Serial port cable and RJ45 cable.
-Reboot MicroZed board by removing the power.
+Set the jumpers to boot from the SD card.
+Insert SD Card into the Zybo. Connect Zybo to the host with USB Serial port cable and RJ45 cable.
+Reboot Zybo board by removing the power.
 
 Check to witch driver is your serial port connected in the host:
 ~$ ls /dev/tty*
@@ -46,7 +42,7 @@ If you press enter you should get a login prompt.
 ###Setup ethernet connection
 
 The debian image has a static IP address (192.168.1.103) as a first step you can just give your desktop a static a IP as well.
-You can run dhclient over the serial console if you board is conntected to network with DHCP server.
+You can run dhclient over the serial console if you board is connected to network with DHCP server.
 
 ```sh
 ~$ ifconfig eth0 192.168.1.101 up
@@ -65,15 +61,15 @@ Password: debian
 
 We will be using the armhf (hardware floating point support) toolchain which is already installed in your debian VM.
 
-1)	The first step is to have a linux running in your MicroZed
-2)	The second is to crosscompile an user space program and run it in your board
+1)	The first step is to have a linux running in your board
+2)	The second is to cross compile a user space program and run it in your board
 
 ```sh
-microZed$ export CC=arm-linux-gnueabihf-
+zybo$ export CC=arm-linux-gnueabihf-
 # Test
-microZed$ ${CC}gcc --version
+zybo$ ${CC}gcc --version
 # Compile a hello world example
-mircoZed$ ${CC}gcc hello-world.c -o hello-world.elf
+zybo$ ${CC}gcc hello-world.c -o hello-world.elf
 ```
 
 ###Copy files to your board
@@ -83,6 +79,6 @@ mircoZed$ ${CC}gcc hello-world.c -o hello-world.elf
 ~$ ssh root@192.168.1.103
 
 # now we are in the Zed
-microZedt$ cd /root
-microZed$ ./hello-world.elf
+zybo$ cd /root
+zybo$ ./hello-world.elf
 ```

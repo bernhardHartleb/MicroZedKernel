@@ -1,15 +1,15 @@
-##Working with the Linux kernel on the MicroZed
+##Working with the Linux kernel on the Zybo
 
 Tutorials
 =========
 
 00-sdcard-setup
 
-How to setup and run Debian in the MicroZedboard
+How to setup and run Debian in the Zybo board
  
 01-xillinx-kernel-sources
  
-How to get the kernel sources for the Microzedboard
+How to get the kernel sources for the Zybo board
 
 02-linux-kernel
 
