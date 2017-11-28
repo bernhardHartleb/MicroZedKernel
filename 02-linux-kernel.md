@@ -45,7 +45,7 @@ Configure the kernel (working based on the default config)
 
 ###Device tree
 
-Copy the device tree from <this repo>/zybo/zynq-zybo.dts to <kernel sources>/arch/arm/boot/dts/zynq-zed.dts 
+Copy the device tree from (this repo)/zynq-zybo.dts to (kernel sources)/arch/arm/boot/dts/zynq-zed.dts 
 
 ```sh
 ~$ gedit arch/arm/boot/dts/zynq-zed.dts
@@ -57,7 +57,7 @@ Change the line "model" to:
 
 To see all available peripherals look at the file:
 
-<kernel sources>/arch/arm/boot/dts/zynq-7000.dtsi
+(kernel sources)/arch/arm/boot/dts/zynq-7000.dtsi
 
 ###Compiling the kernel
 
