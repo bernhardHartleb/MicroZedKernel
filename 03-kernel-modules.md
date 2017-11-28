@@ -26,9 +26,9 @@ Check that gcc is found and the architecture is ARM:
 
 Be sure that you adapt the Makefile with:
 ```sh
-    TARGET = 192.168.1.101                    ->  The ip address of the board
-	TARGET_DIR = /root                           ->  where the driver will be copied
-	KERNELDIR ?= ~/xilinx-v2016.3          ->  path to the linux kernel sources
+    TARGET = 192.168.1.103                 ->  The ip address of the board
+    TARGET_DIR = /root                     ->  where the driver will be copied
+    KERNELDIR ?= ~/xilinx-v2016.3          ->  path to the linux kernel sources
 ```
 
 And then build the module
@@ -47,7 +47,7 @@ Install the module:
 ###Connect to the board through SSH
 
 ```sh
-~$ ssh root@192.168.1.101
+~$ ssh root@192.168.1.103
 ```
 
 Go to /root and check that the *.ko is there

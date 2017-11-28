@@ -111,7 +111,7 @@ zybo:~# lsmod
 Once we have a kernel running it is usually faster to update it over ssh.
 
 ```sh
-~$ export ip=192.168.1.101
+~$ export ip=192.168.1.103
 ~$ scp arch/arm/boot/dts/zynq-zybo.dtb root@$ip:/boot/devicetree.dtb
 ~$ scp arch/arm/boot/uImage root@$ip:/boot/
 ~$ ssh root@$ip 'unlock'
