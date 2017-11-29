@@ -114,6 +114,5 @@ Once we have a kernel running it is usually faster to update it over ssh.
 ~$ export ip=192.168.1.103
 ~$ scp arch/arm/boot/dts/zynq-zybo.dtb root@$ip:/boot/devicetree.dtb
 ~$ scp arch/arm/boot/uImage root@$ip:/boot/
-~$ ssh root@$ip 'unlock'
-~$ rsync -avc modules/lib/. root@$ip:/lib/. && ssh root@$ip 'sync'
+~$ rsync -avc esp_modules/lib/. root@$ip:/lib/. && ssh root@$ip 'sync'
 ```   
