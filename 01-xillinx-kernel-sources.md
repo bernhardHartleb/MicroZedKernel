@@ -12,7 +12,7 @@
     1) Fetch sources: 
 
     ~$ export LINUX_TAG=xilinx-v2016.3
-	~$ cd
+    ~$ cd
     ~$ wget https://github.com/Xilinx/linux-xlnx/archive/${LINUX_TAG}.tar.gz
     ~$ mkdir -p $LINUX_TAG 
     ~$ tar -zxvf $LINUX_TAG.tar.gz --strip-components=1 -C $LINUX_TAG
