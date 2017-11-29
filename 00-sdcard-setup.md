@@ -12,18 +12,18 @@ Download it and flash it in the SD card with the "dd" command.
 
 Download from Moodle:
 
-compressed file: esp-debian-image-2016-11.img.tar.gz
+compressed file: debian-zybo-image-esp-2017.img.tar.gz
 
 uncompress
 ```sh
-~$ tar -zxvf esp-debian-image-2016-11.img.tar.gz
+~$ tar -zxvf debian-zybo-image-esp-2017.img.tar.gz
 ```
 
 With the command lsblk you can check to which device file is the SD card (/dev/sdX)
 
 ```sh
 ~$ lsblk
-~$ sudo dd if=esp-debian-image-2016-11.img of=/dev/sdX bs=128k    -> be careful !
+~$ sudo dd if=debian-zybo-image-esp-2017.img of=/dev/sdX bs=128k    -> be careful !
 ```
 
 ###Boot the Debian image
