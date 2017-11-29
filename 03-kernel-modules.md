@@ -19,15 +19,15 @@ Or use the script: kernel_toolchain_env.sh
 	
 Check that gcc is found and the architecture is ARM:
 ```sh
-~$ ${CC}gcc --version
+${CC}gcc --version
 ```
 
 ###Compile the module
 
 Be sure that you adapt the Makefile with:
 ```sh
-    TARGET = 192.168.1.103                 ->  The ip address of the board
-    TARGET_DIR = /root                     ->  where the driver will be copied
+    TARGET = 192.168.1.103                    ->  The ip address of the board
+    TARGET_DIR = /root                           ->  where the driver will be copied
     KERNELDIR ?= ~/xilinx-v2016.3          ->  path to the linux kernel sources
 ```
 

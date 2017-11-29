@@ -23,7 +23,7 @@ source kernel_toolchain_env.sh
 	
 Check that gcc is found and the architecture is ARM:
 ```sh
-~$ ${CC}gcc --version
+${CC}gcc --version
 ```
 
 We are now ready to compile the kernel.

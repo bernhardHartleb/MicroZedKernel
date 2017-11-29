@@ -7,7 +7,7 @@
     http://www.wiki.xilinx.com/Zynq+Releases
 
 
-- Get the linux kernel sources
+- Get the Linux kernel sources
 	
 1) Fetch sources:
 
@@ -20,7 +20,7 @@ tar -zxvf $LINUX_TAG.tar.gz --strip-components=1 -C $LINUX_TAG
 cd $LINUX_TAG
 ```
     
-2) Initilize a git repository to be able to track changes
+2) (Optional) Initialize a git repository to be able to track changes
 
 ```sh    
 git init
