@@ -45,10 +45,10 @@ Configure the kernel (working based on the default config)
 
 ###Device tree
 
-Copy the device tree from (this repo)/zynq-zybo.dts to (kernel sources)/arch/arm/boot/dts/zynq-zed.dts 
+Copy the device tree from (this repo)/zynq-zybo.dts to (kernel sources)/arch/arm/boot/dts/. 
 
 ```sh
-~$ gedit arch/arm/boot/dts/zynq-zed.dts
+~$ gedit arch/arm/boot/dts/zynq-zybo.dts
 ```
 Change the line "model" to:
 ```sh
@@ -76,7 +76,7 @@ Adapt the core count of your processor in this case 2.
 Compile the source into a device tree binary (dtb):
 
  ```sh
-~$ dtc -I dts -O dtb -o devicetree.dtb arch/arm/boot/dts/zynq-zed.dts 
+~$ dtc -I dts -O dtb -o devicetree.dtb arch/arm/boot/dts/zynq-zybo.dts 
  ```      
 
 ##Deploy to the board
