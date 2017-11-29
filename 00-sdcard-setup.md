@@ -22,8 +22,9 @@ uncompress
 With the command lsblk you can check to which device file is the SD card (/dev/sdX)
 
 ```sh
-~$ lsblk
-~$ sudo dd if=debian-zybo-image-esp-2017.img of=/dev/sdX bs=128k    -> be careful !
+~$ lsblk      -> lists all block devices
+~$ sudo dd if=debian-zybo-image-esp-2017.img of=/dev/sdX bs=128k      -> be careful to choose the right device name!
+~$ sync
 ```
 
 ###Boot the Debian image
@@ -38,6 +39,8 @@ Check to witch driver is your serial port connected in the host:
 
 Use minicom or gtkterm at 115200 baud with the previous device.
 If you press enter you should get a login prompt.
+The username is "debian", password "debian".
+The root password is set to "root".
 
 ###Setup ethernet connection
 
